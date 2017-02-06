@@ -1,11 +1,9 @@
 package uniovi.asw.participants.controller;
 
-import org.springframework.http.ResponseEntity;
-
-import uniovi.asw.participants.model.Participant;
+import uniovi.asw.participants.model.ParticipantInfo;
 
 public interface GetParticipantInfo {
 
-    ResponseEntity<Participant> getPIP(String login, String password);
+    ParticipantInfo getPIP(String login, String password);
 
 }
