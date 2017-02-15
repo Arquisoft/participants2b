@@ -15,3 +15,4 @@ Skeleton of participants module
 - Jose Emilio Labra Gayo (@labra)
 - Karol Mateusz Ciok (@karol-ciok)
 - Adrián Vega Cosio (@vegaAdrian)
+- Luis Fernando Contreras Castañeda (@fercreek)
