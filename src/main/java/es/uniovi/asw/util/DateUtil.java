@@ -1,4 +1,4 @@
-package uniovi.asw.util;
+package es.uniovi.asw.util;
 
 import java.time.Instant;
 import java.time.LocalDate;

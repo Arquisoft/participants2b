@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>es.uniovi.asw</groupId>
-	<artifactId>participants0</artifactId>
+	<artifactId>participants2b</artifactId>
 	<name>participants0</name>
 	<version>0.0.1</version>
 
@@ -43,10 +43,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>2.5.0</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
 		</dependency>
+
+
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>

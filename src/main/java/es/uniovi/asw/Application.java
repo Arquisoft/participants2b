@@ -1,4 +1,4 @@
-package uniovi.asw;
+package es.uniovi.asw;
 
 
 import org.springframework.boot.SpringApplication;
