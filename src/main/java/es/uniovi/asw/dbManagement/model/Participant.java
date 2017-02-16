@@ -25,16 +25,16 @@ public class Participant {
     Participant() {
     }
 
-    public Participant(String name, String lastName, String email) {
-	this.nombre = name;
-	this.apellidos = name;
+    public Participant(String nombre, String apellidos, String email) {
+	this.nombre = nombre;
+	this.apellidos = apellidos;
 	this.email = email;
     }
 
-    public Participant(String name, String lastName, String email,
-	    Date bithDate) {
-	this(name, lastName, email);
-	this.fechaNacimiento = bithDate;
+    public Participant(String nombre, String apellidos, String email,
+	    Date fechaNacimiento) {
+	this(nombre, apellidos, email);
+	this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getNombre() {

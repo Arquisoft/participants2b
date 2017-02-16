@@ -6,33 +6,45 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.uniovi.asw.dbManagement.model.Participant;
-import es.uniovi.asw.participants.wrappers.LoginWrapper;
 import es.uniovi.asw.participants.wrappers.ParticipantInfo;
-import es.uniovi.asw.participants.wrappers.UpdateWarpper;
 
 @Controller
 @RestController
 public class ParticipantController {
 
-    @RequestMapping(value = "/user", produces = {
+    @RequestMapping(value = "/user", method = RequestMethod.POST, produces = {
 	    MediaType.APPLICATION_JSON_VALUE,
 	    MediaType.APPLICATION_XML_VALUE }, consumes = {
 		    MediaType.APPLICATION_JSON_VALUE,
-		    MediaType.APPLICATION_XML_VALUE })
+		    MediaType.APPLICATION_XML_VALUE,
+		    MediaType.APPLICATION_FORM_URLENCODED_VALUE })
     public ResponseEntity<ParticipantInfo> queryInfo(
-	    @RequestBody @Valid final LoginWrapper login) {
+	    @RequestBody @Valid final MultiValueMap<String, String> paramMap) {
+
+	if (paramMap == null)
+	    return new ResponseEntity<ParticipantInfo>(HttpStatus.BAD_REQUEST);
 
 	return new ResponseEntity<ParticipantInfo>(
-		new ParticipantInfo(new Participant("Karol", "Ciok", "email")),
+		new ParticipantInfo(new Participant("Nombre-Ejemplo",
+			"Contraseña-Ejemplo", paramMap.getFirst("login"))),
 		HttpStatus.OK);
     }
 
-    public void updateInfo(UpdateWarpper update) {
+    @RequestMapping(value = "/changePass", method = RequestMethod.POST, produces = {
+	    MediaType.APPLICATION_JSON_VALUE,
+	    MediaType.APPLICATION_XML_VALUE }, consumes = {
+		    MediaType.APPLICATION_JSON_VALUE,
+		    MediaType.APPLICATION_XML_VALUE,
+		    MediaType.APPLICATION_FORM_URLENCODED_VALUE })
+    public void updateInfo(
+	    @RequestBody @Valid final MultiValueMap<String, String> paramMap) {
 	// TODO Auto-generated method stub
 
     }

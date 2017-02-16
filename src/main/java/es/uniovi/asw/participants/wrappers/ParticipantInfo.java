@@ -16,6 +16,15 @@ public class ParticipantInfo {
     private String ndi;
     private String email;
 
+    public ParticipantInfo(String nombre, String apellidos,
+	    Date fechaNacimiento, String ndi, String email) {
+	this.nombre = nombre;
+	this.apellidos = apellidos;
+	this.fechaNacimiento = fechaNacimiento;
+	this.ndi = ndi;
+	this.email = email;
+    }
+
     public ParticipantInfo(Participant participant) {
 	this.nombre = participant.getNombre();
 	this.apellidos = participant.getApellidos();
@@ -47,6 +56,64 @@ public class ParticipantInfo {
     @XmlElement
     public String getEmail() {
 	return email;
+    }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result
+		+ ((apellidos == null) ? 0 : apellidos.hashCode());
+	result = prime * result + ((email == null) ? 0 : email.hashCode());
+	result = prime * result
+		+ ((fechaNacimiento == null) ? 0 : fechaNacimiento.hashCode());
+	result = prime * result + ((ndi == null) ? 0 : ndi.hashCode());
+	result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	ParticipantInfo other = (ParticipantInfo) obj;
+	if (apellidos == null) {
+	    if (other.apellidos != null)
+		return false;
+	} else if (!apellidos.equals(other.apellidos))
+	    return false;
+	if (email == null) {
+	    if (other.email != null)
+		return false;
+	} else if (!email.equals(other.email))
+	    return false;
+	if (fechaNacimiento == null) {
+	    if (other.fechaNacimiento != null)
+		return false;
+	} else if (!fechaNacimiento.equals(other.fechaNacimiento))
+	    return false;
+	if (ndi == null) {
+	    if (other.ndi != null)
+		return false;
+	} else if (!ndi.equals(other.ndi))
+	    return false;
+	if (nombre == null) {
+	    if (other.nombre != null)
+		return false;
+	} else if (!nombre.equals(other.nombre))
+	    return false;
+	return true;
+    }
+
+    @Override
+    public String toString() {
+	return "ParticipantInfo [nombre=" + nombre + ", apellidos=" + apellidos
+		+ ", fechaNacimiento=" + fechaNacimiento + ", ndi=" + ndi
+		+ ", email=" + email + "]";
     }
 
 }
