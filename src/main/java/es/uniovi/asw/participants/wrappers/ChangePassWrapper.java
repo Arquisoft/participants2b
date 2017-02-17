@@ -1,11 +1,11 @@
 package es.uniovi.asw.participants.wrappers;
 
-public class UpdatePassWrapper {
+public class ChangePassWrapper {
     private String login;
     private String password;
     private String newPassword;
 
-    public UpdatePassWrapper() {
+    public ChangePassWrapper() {
     }
 
     public String getLogin() {

@@ -11,10 +11,9 @@ public class ParticipantDataImpl implements ParticipantData {
     }
 
     @Override
-    public Participant updateInfo(String login, String password,
-	    String newPassword) {
+    public void updateInfo(Participant p) {
 	// TODO Auto-generated method stub
-	return null;
+
     }
 
 }
