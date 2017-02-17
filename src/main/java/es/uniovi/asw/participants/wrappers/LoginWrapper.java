@@ -6,8 +6,6 @@ public class LoginWrapper {
     private String password;
 
     public LoginWrapper() {
-	this.login = "";
-	this.password = "";
     }
 
     public String getLogin() {
@@ -30,30 +28,4 @@ public class LoginWrapper {
     public String toString() {
 	return "LoginWrapper [login=" + login + ", password=" + password + "]";
     }
-
-    @Override
-    public int hashCode() {
-	final int prime = 31;
-	int result = 1;
-	result = prime * result + ((login == null) ? 0 : login.hashCode());
-	return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-	if (this == obj)
-	    return true;
-	if (obj == null)
-	    return false;
-	if (getClass() != obj.getClass())
-	    return false;
-	LoginWrapper other = (LoginWrapper) obj;
-	if (login == null) {
-	    if (other.login != null)
-		return false;
-	} else if (!login.equals(other.login))
-	    return false;
-	return true;
-    }
-
 }

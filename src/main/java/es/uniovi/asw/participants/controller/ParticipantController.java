@@ -18,6 +18,8 @@ import es.uniovi.asw.participants.wrappers.UpdatePassWrapper;
 @Controller
 @RestController
 public class ParticipantController {
+    
+    
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public ResponseEntity<ParticipantInfo> queryInfo(
@@ -25,6 +27,8 @@ public class ParticipantController {
 
 	if (loginWrapper == null)
 	    return new ResponseEntity<ParticipantInfo>(HttpStatus.BAD_REQUEST);
+	
+	
 
 	return new ResponseEntity<ParticipantInfo>(
 		new ParticipantInfo(new Participant("Nombre-Ejemplo",
