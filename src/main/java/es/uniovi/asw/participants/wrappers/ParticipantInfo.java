@@ -1,11 +1,14 @@
 package es.uniovi.asw.participants.wrappers;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import es.uniovi.asw.dbManagement.model.Participant;
+import es.uniovi.asw.util.DateUtil;
 
 @XmlRootElement
 public class ParticipantInfo {
@@ -20,7 +23,7 @@ public class ParticipantInfo {
 	    Date fechaNacimiento, String ndi, String email) {
 	this.nombre = nombre;
 	this.apellidos = apellidos;
-	this.fechaNacimiento = fechaNacimiento;
+	this.fechaNacimiento = new Date(fechaNacimiento.getTime());
 	this.ndi = ndi;
 	this.email = email;
     }
@@ -44,8 +47,10 @@ public class ParticipantInfo {
     }
 
     @XmlElement
-    public Date getFechaNacimiento() {
-	return fechaNacimiento;
+    public int getEdad() {
+	Period edad = Period.between(DateUtil.asLocalDate(fechaNacimiento),
+		LocalDate.now());
+	return edad.getYears();
     }
 
     @XmlElement

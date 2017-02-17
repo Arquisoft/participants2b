@@ -34,11 +34,11 @@ public class Participant {
     public Participant(String nombre, String apellidos, String email,
 	    Date fechaNacimiento) {
 	this(nombre, apellidos, email);
-	this.fechaNacimiento = fechaNacimiento;
+	this.fechaNacimiento = new Date(fechaNacimiento.getTime());
     }
 
-    public Participant (String ndi) {
-    	this.ndi = ndi;
+    public Participant(String ndi) {
+	this.ndi = ndi;
     }
 
     public String getNombre() {
@@ -66,11 +66,11 @@ public class Participant {
     }
 
     public Date getFechaNacimiento() {
-	return fechaNacimiento;
+	return new Date(fechaNacimiento.getTime());
     }
 
     public void setFechaNacimiento(Date fechaNacimiento) {
-	this.fechaNacimiento = fechaNacimiento;
+	this.fechaNacimiento = new Date(fechaNacimiento.getTime());
     }
 
     public String getResidencia() {
