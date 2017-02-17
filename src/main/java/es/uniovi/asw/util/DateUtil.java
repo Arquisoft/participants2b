@@ -6,6 +6,12 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
+/**
+ * Clase de utilidad que nos permite intercambiar los objetos Date y LocalDate.
+ * 
+ * @author karol
+ *
+ */
 public class DateUtil {
 
     public static Date asDate(LocalDate localDate) {

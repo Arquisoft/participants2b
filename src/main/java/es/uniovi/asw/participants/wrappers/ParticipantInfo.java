@@ -10,6 +10,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import es.uniovi.asw.dbManagement.model.Participant;
 import es.uniovi.asw.util.DateUtil;
 
+/**
+ * Clase envoltorio de la información que se envía en la respuesta a la petición
+ * al servicio web.
+ * 
+ * @author karol
+ *
+ */
 @XmlRootElement
 public class ParticipantInfo {
 

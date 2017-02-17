@@ -14,16 +14,16 @@ import es.uniovi.asw.util.DateUtil;
 
 public class ParticipantInfoTest {
 
-    Participant participant1;
-    Participant participant2;
+    private Participant participant1;
+    private Participant participant2;
 
-    ParticipantInfo participantInfo1Auto;
-    ParticipantInfo participantInfo1Manual;
+    private ParticipantInfo participantInfo1Auto;
+    private ParticipantInfo participantInfo1Manual;
 
-    ParticipantInfo participantInfo2Auto;
-    ParticipantInfo participantInfo2Manual;
+    private ParticipantInfo participantInfo2Auto;
+    private ParticipantInfo participantInfo2Manual;
 
-    Date fechaPruebas = DateUtil.asDate(LocalDate.now().withYear(1994));
+    private Date fechaPruebas = DateUtil.asDate(LocalDate.now().withYear(1994));
 
     @Before
     public void setUp() {

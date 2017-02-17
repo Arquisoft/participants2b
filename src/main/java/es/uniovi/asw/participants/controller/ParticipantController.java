@@ -17,6 +17,12 @@ import es.uniovi.asw.participants.wrappers.ChangePassWrapper;
 import es.uniovi.asw.participants.wrappers.LoginWrapper;
 import es.uniovi.asw.participants.wrappers.ParticipantInfo;
 
+/**
+ * Controlador principal de los servicios web de la aplicación.
+ * 
+ * @author karol
+ *
+ */
 @Controller
 @RestController
 public class ParticipantController {
@@ -29,8 +35,8 @@ public class ParticipantController {
 
     /**
      * Devuelve los datos del usuario en una peticion POST con la cabecera OK si
-     * este existe en la base de datos. En caso contrario envia una peticion POST con la
-     * cabecera NOT_FOUND.
+     * este existe en la base de datos. En caso contrario envia una peticion
+     * POST con la cabecera NOT_FOUND.
      * 
      * @param loginWrapper
      * @return HTTP OK si el usuario existe, HTTP NOT_FOUND si no existe o HTTP

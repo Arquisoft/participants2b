@@ -1,5 +1,11 @@
 package es.uniovi.asw.participants.wrappers;
 
+/**
+ * Clase envoltorio de los datos del login.
+ * 
+ * @author karol
+ *
+ */
 public class LoginWrapper {
 
     private String login;

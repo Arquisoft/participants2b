@@ -1,5 +1,11 @@
 package es.uniovi.asw.participants.wrappers;
 
+/**
+ * Clase envoltorio de los parametros del cambio de contraseña.
+ * 
+ * @author karol
+ *
+ */
 public class ChangePassWrapper {
     private String login;
     private String password;

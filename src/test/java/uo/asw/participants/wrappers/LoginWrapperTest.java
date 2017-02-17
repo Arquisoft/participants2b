@@ -8,7 +8,7 @@ import es.uniovi.asw.participants.wrappers.LoginWrapper;
 
 public class LoginWrapperTest {
 
-	LoginWrapper loginWrapper;
+	private LoginWrapper loginWrapper;
 	
 	@Test
 	public void testLoginWrapper() {
