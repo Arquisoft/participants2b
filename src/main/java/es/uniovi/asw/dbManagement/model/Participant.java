@@ -37,6 +37,10 @@ public class Participant {
 	this.fechaNacimiento = fechaNacimiento;
     }
 
+    public Participant (String ndi) {
+    	this.ndi = ndi;
+    }
+
     public String getNombre() {
 	return nombre;
     }
