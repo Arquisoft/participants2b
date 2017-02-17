@@ -29,7 +29,7 @@ public class ParticipantController {
 
     /**
      * Devuelve los datos del usuario en una peticion POST con la cabecera OK si
-     * este existe en la base de datos. En caso envia una peticion POST con la
+     * este existe en la base de datos. En caso contrario envia una peticion POST con la
      * cabecera NOT_FOUND.
      * 
      * @param loginWrapper
