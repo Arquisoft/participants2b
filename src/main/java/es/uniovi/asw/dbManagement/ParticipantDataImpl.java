@@ -1,7 +1,10 @@
 package es.uniovi.asw.dbManagement;
 
+import org.springframework.stereotype.Component;
+
 import es.uniovi.asw.dbManagement.model.Participant;
 
+@Component
 public class ParticipantDataImpl implements ParticipantData {
 
     @Override
