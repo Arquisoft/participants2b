@@ -34,7 +34,7 @@ public class ParticipantControllerTest {
     private WebApplicationContext webApplicationContext;
 
     @Before
-    public void setup() throws Exception {
+    public void setUp() throws Exception {
 	this.mockMvc = webAppContextSetup(webApplicationContext).build();
     }
 

@@ -9,17 +9,17 @@ import es.uniovi.asw.dbManagement.model.Participant;
 public class ParticipantDataImpl implements ParticipantData {
 
     @Autowired
-    ParticipantRepository repository;
+    private ParticipantRepository repository;
 
     @Override
     public Participant getData(String login) {
-        Participant p = repository.findByEmail(login);
-	    return p;
+	Participant p = repository.findByEmail(login);
+	return p;
     }
 
     @Override
     public void updateInfo(Participant p) {
-        repository.saveAndFlush(p);
+	repository.saveAndFlush(p);
     }
 
 }
