@@ -4,7 +4,7 @@ import es.uniovi.asw.dbManagement.model.Participant;
 
 public interface ParticipantData {
 
-    Participant getData(String login, String password);
+    Participant getData(String login);
 
     void updateInfo(Participant p);
 }
