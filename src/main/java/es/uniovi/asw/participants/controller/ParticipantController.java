@@ -107,7 +107,7 @@ public class ParticipantController {
 
     @GetMapping("/changePassForm")
     public String getChangePassForm(Model model) {
-	model.addAttribute("logginWrapper", new LoginWrapper());
+	model.addAttribute("loginWrapper", new LoginWrapper());
 	return "index";
     }
 
