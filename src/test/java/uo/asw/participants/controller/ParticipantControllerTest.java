@@ -84,6 +84,14 @@ public class ParticipantControllerTest {
     }
 	
 	@Test
+    public void wrongPassword() throws Exception {
+        mockMvc.perform(post("/user")
+                .content("{\"login\":\"berto@doe.com\", \"password\":\"berto123456\"}")
+                .contentType(contentType))
+                .andExpect(status().isNotFound());
+    }
+	
+	/*@Test
     public void okChangePassword() throws Exception {
 		//Cambiamos la password a berto
         mockMvc.perform(post("/changePassForm")
@@ -96,7 +104,7 @@ public class ParticipantControllerTest {
                 .content("{\"login\":\"berto@doe.com\", \"password\":\"berto123456\"}")
                 .contentType(contentType))
                 .andExpect(status().isOk());
-    }
+    }*/
 	
 	
 	
