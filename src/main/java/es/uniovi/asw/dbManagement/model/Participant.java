@@ -14,6 +14,7 @@ public class Participant {
     private Long id;
     private String nombre;
     private String apellidos;
+    @Column(unique = true)
     private String email;
     private String password;
     @Temporal(TemporalType.DATE)
