@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.uniovi.asw.dbManagement.ParticipantData;
-import es.uniovi.asw.dbManagement.PersistenceFactory;
 import es.uniovi.asw.dbManagement.model.Participant;
 import es.uniovi.asw.participants.wrappers.ChangePassWrapper;
 import es.uniovi.asw.participants.wrappers.LoginWrapper;
@@ -32,7 +31,7 @@ import es.uniovi.asw.participants.wrappers.ParticipantInfo;
 @RestController
 public class ParticipantController {
 
-	@Autowired
+    @Autowired
     private ParticipantData data;
 
     /**
@@ -48,26 +47,25 @@ public class ParticipantController {
     public ResponseEntity<ParticipantInfo> queryInfo(
 	    @RequestBody @Valid final LoginWrapper loginWrapper) {
 
-    if (loginWrapper == null)
-        return new ResponseEntity<ParticipantInfo>(HttpStatus.BAD_REQUEST);
+	if (loginWrapper == null)
+	    return new ResponseEntity<ParticipantInfo>(HttpStatus.BAD_REQUEST);
 
-    Participant p = data.getData(loginWrapper.getLogin());
+	Participant p = data.getData(loginWrapper.getLogin());
 
-    if (p == null) {
-        return new ResponseEntity<ParticipantInfo>(HttpStatus.NOT_FOUND);
-    }
+	if (p == null)
+	    return new ResponseEntity<ParticipantInfo>(HttpStatus.NOT_FOUND);
 
-    if (p.getPassword().equals(loginWrapper.getPassword()))
-        return new ResponseEntity<ParticipantInfo>(new ParticipantInfo(p),
-            HttpStatus.OK);
+	if (p.getPassword().equals(loginWrapper.getPassword()))
+	    return new ResponseEntity<ParticipantInfo>(new ParticipantInfo(p),
+		    HttpStatus.OK);
 
-    return new ResponseEntity<ParticipantInfo>(HttpStatus.NOT_FOUND);
+	return new ResponseEntity<ParticipantInfo>(HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/login")
     public String greetingForm(Model model) {
 	model.addAttribute("loginWrapper", new LoginWrapper());
-	return "index";
+	return "login";
     }
 
     @PostMapping("/login")
@@ -93,6 +91,9 @@ public class ParticipantController {
 	    return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
 
 	Participant p = data.getData(changePassWrapper.getLogin());
+
+	if (p == null)
+	    return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 
 	if (!p.getPassword().equals(changePassWrapper.getPassword()))
 	    return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
