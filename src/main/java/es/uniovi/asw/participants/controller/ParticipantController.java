@@ -107,14 +107,14 @@ public class ParticipantController {
 
     @GetMapping("/changePassForm")
     public String getChangePassForm(Model model) {
-	model.addAttribute("loginWrapper", new LoginWrapper());
+	model.addAttribute("changePassWrapper", new ChangePassWrapper());
 	return "index";
     }
 
     @PostMapping("/changePassForm")
-    public ResponseEntity<ParticipantInfo> changePassSubmit(
-	    @ModelAttribute LoginWrapper loginWrapper) {
-	return queryInfo(loginWrapper);
+    public ResponseEntity<Void> changePassSubmit(
+	    @ModelAttribute ChangePassWrapper changePassWrapper) {
+	return updateInfo(changePassWrapper);
     }
 
 }
