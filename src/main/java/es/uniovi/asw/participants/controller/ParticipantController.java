@@ -6,10 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -62,18 +58,6 @@ public class ParticipantController {
 	return new ResponseEntity<ParticipantInfo>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/login")
-    public String greetingForm(Model model) {
-	model.addAttribute("loginWrapper", new LoginWrapper());
-	return "login";
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<ParticipantInfo> loginSubmit(
-	    @ModelAttribute LoginWrapper loginWrapper) {
-	return queryInfo(loginWrapper);
-    }
-
     /**
      * Cambia la contraseña del usuario si el usuario existe en la base de
      * datos.
@@ -104,18 +88,6 @@ public class ParticipantController {
 
 	return new ResponseEntity<Void>(HttpStatus.OK);
 
-    }
-
-    @GetMapping("/changePassForm")
-    public String getChangePassForm(Model model) {
-	model.addAttribute("loginWrapper", new LoginWrapper());
-	return "index";
-    }
-
-    @PostMapping("/changePassForm")
-    public ResponseEntity<ParticipantInfo> changePassSubmit(
-	    @ModelAttribute LoginWrapper loginWrapper) {
-	return queryInfo(loginWrapper);
     }
 
 }
