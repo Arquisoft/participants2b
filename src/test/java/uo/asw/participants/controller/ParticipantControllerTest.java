@@ -80,5 +80,11 @@ public class ParticipantControllerTest {
 			"{\"login\":\"iker@doe.com\", \"password\":\"iker123456\"}")
 		.contentType(contentType)).andExpect(status().isOk());
     }
+    
+    @Test
+    public void wrongPostChangePassword() throws Exception {
+	mockMvc.perform(post("/changePass").content("{\"login\":\"berto@doe.com\"")
+		.contentType(contentType)).andExpect(status().isBadRequest());
+    }
 
 }
