@@ -1,8 +1,9 @@
 package es.uniovi.asw.dbManagement.model;
 
-import java.util.Date;
+import es.uniovi.asw.dbManagement.types.ParticipantType;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Entity
@@ -23,6 +24,7 @@ public class Participant {
     private String residencia;
     private String nacionalidad;
     private String ndi;
+    private ParticipantType type;
 
     Participant() {
     }
@@ -105,6 +107,14 @@ public class Participant {
 
     public void setPassword(String password) {
 	this.password = password;
+    }
+
+    public ParticipantType getType() {
+        return type;
+    }
+
+    public void setType(ParticipantType type) {
+        this.type = type;
     }
 
     @Override
