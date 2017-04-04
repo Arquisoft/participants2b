@@ -24,6 +24,7 @@ public class Participant {
     private String residencia;
     private String nacionalidad;
     private String ndi;
+    @Enumerated(EnumType.STRING)
     private ParticipantType type;
 
     Participant() {
